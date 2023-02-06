@@ -18,7 +18,7 @@
         @click="menuStatus = !menuStatus"
       >
         <span></span>
-        <span></span>
+        <span class="circle"></span>
         <span></span>
       </div>
       <ul
@@ -31,10 +31,10 @@
       </ul>
     </div>
   </nav>
-  <section class="mt-[58px] inline-block">
+  <section class="mt-[58px] inline-block w-full">
     <div class="">
       <div
-        class="key-vision noto-serif absolute left-0 h-[calc(100vh-58px)] w-full lg:w-[calc(100%-300px)] bg-slate-100 overflow-hidden"
+        class="key-vision blur-[2px] sm:blur-none noto-serif absolute left-0 h-[calc(100vh-58px)] w-full lg:w-[calc(100%-300px)] bg-slate-100 overflow-hidden"
       >
         <div class="key-vision-base absolute w-full h-full">
           <img
@@ -64,10 +64,15 @@
         </div>
       </div>
       <div
-        class="key-text absolute right-6 md:right-40 top-[62vh] whitespace-nowrap lg:top-[30vh] chenyuluoyan tracking-[3px] text-[30px] text-[#343434]"
+        class="key-text absolute right-6 md:right-40 top-[34vh] whitespace-nowrap lg:top-[30vh] chenyuluoyan tracking-[3px] text-[30px] text-[#343434]"
       >
         <p class="mt-20">親手創造夢想住宅的旅途</p>
         <p>這是一趟屬於您與家人，</p>
+      </div>
+    </div>
+    <div class="block mt-[calc(100vh+65px)] noto-sans">
+      <div class="big-title text-center py-16">
+        <p>關於手建築</p>
       </div>
     </div>
   </section>
@@ -75,6 +80,12 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+
+/**
+ * 判斷navigation bar menu狀態
+ * @params menuStatus false=關閉菜單, true=開啟菜單
+ * @params clientWidth 監聽目前裝置寬度，以判斷是否顯示hamburger
+ */
 
 const menuStatus = ref(false);
 const clientWidth = ref(null);
@@ -97,6 +108,7 @@ nav ul li {
   border-bottom: 0.5px solid transparent;
   transition: border 0.3s ease-in-out;
 }
+
 nav ul li:hover {
   border-bottom: 0.5px solid #434343;
 }
@@ -122,19 +134,13 @@ nav ul li:hover {
   transition: top 0.3s ease-in-out;
 }
 
-@media (max-width: 600px) {
-  .key-vision-text {
-    top: 40%;
-  }
-}
-
 .key-vision-shadow {
-  transform: scale(1.5);
+  transform: scale(1.3);
   transition: transform 0.8s ease-in-out;
 }
 
 .key-vision-shadow:hover {
-  transform: scale(1.5) translateX(80px);
+  transform: scale(1.3) translateX(80px);
 }
 
 .key-text {
@@ -145,28 +151,40 @@ nav ul li:hover {
 .hamburger {
   cursor: pointer;
   background-color: transparent;
-  width: 40px;
-  height: 20px;
-  margin-left: auto;
+  width: 26px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3px;
+  align-content: center;
 }
 
 .hamburger span {
   display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #000;
+  width: 20px;
+  height: 2.5px;
+  border-radius: 99px;
+  background-color: #813b31;
+}
+
+.hamburger span.circle {
+  height: 2.5px;
+  width: 12px;
 }
 
 .hamburger span:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
+
 .hamburger span:nth-child(2) {
   margin-left: auto;
   transition: background-color 0.25s, transform 0.3s;
 }
+
 .hamburger span:nth-child(1),
 .hamburger span:nth-child(3) {
-  transition: transform 0.45s;
+  transition: transform 0.45s, background-color 0.25s;
 }
 
 .hamburger.open {
@@ -178,14 +196,16 @@ nav ul li:hover {
 }
 
 .hamburger.open span:nth-child(2) {
-  transform: translateX(-20px);
+  transform: translateX(20px) rotate(270deg);
   background-color: transparent !important;
 }
+
 .hamburger.open span:nth-child(1) {
   transform: translate(0%, 6px) rotate(315deg);
 }
+
 .hamburger.open span:nth-child(3) {
-  transform: translate(0%, -11px) rotate(-315deg);
+  transform: translate(0%, -7px) rotate(-315deg);
 }
 
 .menu {
@@ -199,13 +219,74 @@ nav ul li:hover {
   height: 100vh;
   color: #fff;
   text-align: center;
-  padding: 58px;
+  padding-top: 30vh;
   opacity: 0.8;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
 }
 
+.menu li {
+  width: 100%;
+  font-size: 18px;
+  padding: 20px 20px;
+  border: none;
+  margin: 20px 0;
+}
+
+.menu li:hover {
+  background: #fff;
+  color: #813b31;
+  border: none;
+  font-weight: 600;
+}
+
 .menu.open {
   transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .key-vision-text {
+    top: 40%;
+  }
+
+  .key-vision-shadow {
+    transform: scale(1.6);
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .key-vision-shadow:hover {
+    transform: scale(1.6) translateX(60px);
+  }
+}
+
+.big-title p {
+  display:inline-block;
+  text-align: center;
+  color: #813b31;
+  font-size: 24px;
+  width: auto;
+  position: relative;
+  padding:0 130px;
+  letter-spacing: 5px;
+}
+.big-title p:before {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 0.5px;
+  background: #000;
+  left: 0px;
+  top: 50%;
+  position: absolute;
+}
+.big-title p:after {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 0.5px;
+  background: #000;
+  right: 0px;
+  top: 50%;
+  position: absolute;
 }
 </style>
