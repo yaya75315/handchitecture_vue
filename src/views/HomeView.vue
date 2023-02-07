@@ -1,30 +1,20 @@
 <template>
   <nav
-    class="noto-serif flex items-center fixed left-0 right-0 z-10 bg-white/10 h-[58px] backdrop-blur-[4px] px-4 py-2"
-  >
-    <div
-      class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto"
-    >
+    class="noto-serif flex items-center fixed left-0 right-0 z-10 bg-white/10 h-[58px] backdrop-blur-[4px] px-4 py-2">
+    <div class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto">
       <div class="flex items-center gap-3">
         <img class="w-[50px]" src="../assets/images/LOGO.svg" alt="" />
         <p class="text-[#2A2A2A] font-semibold tracking-[10px] text-sm">
           手建築研究所
         </p>
       </div>
-      <div
-        v-if="clientWidth < 560"
-        class="hamburger"
-        :class="{ open: menuStatus }"
-        @click="menuStatus = !menuStatus"
-      >
+      <div v-if="clientWidth < 560" class="hamburger" :class="{ open: menuStatus }" @click="menuStatus = !menuStatus">
         <span></span>
         <span class="circle"></span>
         <span></span>
       </div>
-      <ul
-        class="flex items-center text-[#2B2B2B] gap-8 text-sm tracking-[5px]"
-        :class="[{ menu: clientWidth < 560 }, { open: menuStatus }]"
-      >
+      <ul class="flex items-center text-[#2B2B2B] gap-8 text-sm tracking-[5px]"
+        :class="[{ menu: clientWidth < 560 }, { open: menuStatus }]">
         <li>關於手建築</li>
         <li>團隊介紹</li>
         <li>殼計畫</li>
@@ -34,45 +24,48 @@
   <section class="mt-[58px] inline-block w-full">
     <div class="">
       <div
-        class="key-vision blur-[2px] sm:blur-none noto-serif absolute left-0 h-[calc(100vh-58px)] w-full lg:w-[calc(100%-300px)] bg-slate-100 overflow-hidden"
-      >
+        class="key-vision blur-[2px] sm:blur-none noto-serif absolute left-0 h-[calc(100vh-58px)] w-full lg:w-[calc(100%-300px)] bg-slate-100 overflow-hidden">
         <div class="key-vision-base absolute w-full h-full">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/base.png"
-            alt=""
-          />
+          <img class="w-full h-full object-cover" src="../assets/images/base.png" alt="" />
         </div>
         <div class="key-vision-text">
-          <p
-            class="tracking-[20px] lg:tracking-[60px] font-bold text-[30px] md:text-[42px] text-white align-middle"
-          >
+          <p class="tracking-[20px] lg:tracking-[60px] font-bold text-[30px] md:text-[42px] text-white align-middle">
             手建築研究所
           </p>
-          <p
-            class="text-[12px] md:text-[20px] tracking-[6px] lg:tracking-[14.5px] pl-1 text-white font-bold"
-          >
+          <p class="text-[12px] md:text-[20px] tracking-[6px] lg:tracking-[14.5px] pl-1 text-white font-bold">
             Handchitecture Gallery
           </p>
         </div>
         <div class="key-vision-shadow absolute w-full h-full">
-          <img
-            class="w-full h-full object-cover"
-            src="../assets/images/shadow.png"
-            alt=""
-          />
+          <img class="w-full h-full object-cover" src="../assets/images/shadow.png" alt="" />
         </div>
       </div>
       <div
-        class="key-text absolute right-6 md:right-40 top-[34vh] whitespace-nowrap lg:top-[30vh] chenyuluoyan tracking-[3px] text-[30px] text-[#343434]"
-      >
+        class="key-text absolute right-6 md:right-40 top-[34vh] whitespace-nowrap lg:top-[30vh] chenyuluoyan tracking-[3px] text-[30px] text-[#343434]">
         <p class="mt-20">親手創造夢想住宅的旅途</p>
         <p>這是一趟屬於您與家人，</p>
       </div>
     </div>
     <div class="block mt-[calc(100vh+65px)] noto-sans">
-      <div class="big-title text-center py-16">
+      <div>
+        <div class="big-title text-center py-16">
+          <p>關於手建築</p>
+        </div>
+        <div class="block-content text-[18px] tracking-[5px] flex flex-col gap-7 max-w-[920px] mx-auto text-justify">
+          <p>手建築有限公司創立於2022年11月22日，主要的核心理念為：居住是基本人權，每個人都應當擁有「親手創造住宅」並「安居其中」的權利。</p>
+          <p>然而手建築並非「建商」也不會成為「建設公司」，我們提出我們的想法來創造新的自建模式，與其說是模式，手建築更期望成為一場「運動」，一場由每一位消費者所發起的「互助 、 互惠、 共學」導向的運動。</p>
+          <p>手建築期望以家人的角度帶領居住者在找尋住所的過程「去中間商化」，從源頭消費，在不假人他人之手的過程增添住宅更多「手的溫度」。</p>
+        </div>
+      </div>
+      <div class="mt-[280px]">
+        <div class="big-title text-center py-16">
         <p>關於手建築</p>
+      </div>
+      <div class="block-content text-[18px] tracking-[5px] flex flex-col gap-7 max-w-[920px] mx-auto text-justify">
+        <p>手建築有限公司創立於2022年11月22日，主要的核心理念為：居住是基本人權，每個人都應當擁有「親手創造住宅」並「安居其中」的權利。</p>
+        <p>然而手建築並非「建商」也不會成為「建設公司」，我們提出我們的想法來創造新的自建模式，與其說是模式，手建築更期望成為一場「運動」，一場由每一位消費者所發起的「互助 、 互惠、 共學」導向的運動。</p>
+        <p>手建築期望以家人的角度帶領居住者在找尋住所的過程「去中間商化」，從源頭消費，在不假人他人之手的過程增添住宅更多「手的溫度」。</p>
+      </div>
       </div>
     </div>
   </section>
@@ -260,15 +253,16 @@ nav ul li:hover {
 }
 
 .big-title p {
-  display:inline-block;
+  display: inline-block;
   text-align: center;
   color: #813b31;
   font-size: 24px;
   width: auto;
   position: relative;
-  padding:0 130px;
+  padding: 0 130px;
   letter-spacing: 5px;
 }
+
 .big-title p:before {
   content: "";
   display: block;
@@ -279,6 +273,7 @@ nav ul li:hover {
   top: 50%;
   position: absolute;
 }
+
 .big-title p:after {
   content: "";
   display: block;
