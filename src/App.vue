@@ -11,29 +11,79 @@
 import HomeView from "./views/HomeView.vue";
 
 </script>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
-@font-face {
-  font-family: 'chenyuluoyan';
-  src: url('../assets/font/ChenYuluoyan-Thin.woff') format("woff"),
+
+.big-title p {
+  display: inline-block;
+  text-align: center;
+  color: #813b31;
+  font-size: 24px;
+  width: auto;
+  position: relative;
+  padding: 0 130px;
+  letter-spacing: 5px;
+  white-space: nowrap;
 }
 
-@font-face {
-  font-family: 'chenyuluoyan monospaced';
-  src: url('../assets/font/ChenYuluoyan-Thin-Monospaced.woff') format("woff"),
+.big-title p:before {
+  content: "";
+  display: block;
+  max-width: 96px;
+  width: 60%;
+  height: 0.5px;
+  background: #000;
+  left: 0px;
+  top: 50%;
+  position: absolute;
 }
 
-
-.noto-serif{
-    font-family: 'Noto Serif TC', serif;
+.big-title p:after {
+  content: "";
+  display: block;
+  max-width: 96px;
+  width: 60%;
+  height: 0.5px;
+  background: #000;
+  right: 0px;
+  top: 50%;
+  position: absolute;
 }
 
-.chenyuluoyan{
-    font-family: 'chenyuluoyan', serif;
-}
+@media (max-width: 600px) {
+  .big-title p {
+    display: inline-block;
+    text-align: center;
+    color: #813b31;
+    font-size: 24px;
+    width: auto;
+    position: relative;
+    padding: 0 90px;
+    letter-spacing: 5px;
+    white-space: nowrap;
+  }
 
-.chenyuluoyan-monospaced{
-    font-family: 'chenyuluoyan monospaced', serif;
+  .big-title p:before {
+    content: "";
+    display: block;
+    max-width: 56px;
+    width: 60%;
+    height: 0.5px;
+    background: #000;
+    left: 0px;
+    top: 50%;
+    position: absolute;
+  }
+
+  .big-title p:after {
+    content: "";
+    display: block;
+    max-width: 56px;
+    width: 60%;
+    height: 0.5px;
+    background: #000;
+    right: 0px;
+    top: 50%;
+    position: absolute;
+  }
 }
 </style>
