@@ -47,13 +47,26 @@
         <p>這是一趟屬於您與家人，</p>
       </div>
     </div>
-    <div class="px-4 lg:px-0 block mt-[calc(100vh+65px)] noto-sans max-w-[920px] mx-auto">
+    <div class="lg:px-0 block mt-[calc(100vh+65px)] noto-sans">
       <!-- 關於手建築 -->
-      <AboutUs/>
+      <div class=" bg-[#CABFB3]/10">
+        <AboutUs />
+      </div>
+
       <!-- 團隊介紹 -->
-      <MemberIntro :clientWidth="clientWidth"/>
+      <MemberIntro :clientWidth="clientWidth" />
       <!-- 殼計畫 -->
-      <HousingPlan/>
+      <div class=" bg-[#CABFB3]/10 pb-16">
+        <HousingPlan />
+        <!-- 導引按鈕 -->
+        <div class="px-4 mt-32 max-w-[920px] mx-auto text-center flex flex-col items-center gap-7">
+          <button
+            class="max-w-[600px] w-full text-white py-3 tracking-[5px] text-[22px] bg-[#484848] rounded-[10px] hover:bg-[#813B31] transition-colors">了解更多</button>
+          <button
+            class="text-[#968E85] hover:text-[white] hover:bg-[#968E85] text-xs px-6 py-2 rounded-[5px] border border-[#968E85] tracking-[2px] transition-colors">申請加入手建築</button>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>

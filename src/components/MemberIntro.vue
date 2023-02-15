@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-32 max-w-[920px] mx-auto">
+    <div class="mt-32 px-4 max-w-[920px] mx-auto">
         <div class="big-title text-center py-16">
             <p>團隊介紹</p>
         </div>
@@ -384,7 +384,7 @@ defineProps({
     width: 0;
     height: 0;
     bottom: -40px;
-    right: 240px;
+    right: 130px;
     border-bottom: 20px solid transparent;
     border-top: 30px solid #813b31;
     border-right: 20px solid transparent;

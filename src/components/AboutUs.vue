@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="big-title text-center py-16">
+    <div class="max-w-[920px] mx-auto py-20 px-4 ">
+        <div class="big-title text-center pb-16">
             <p>關於手建築</p>
         </div>
         <div class="block-content text-base md:text-[18px] tracking-[5px] flex flex-col gap-7  text-justify">
@@ -21,7 +21,7 @@
                         <p class="mt-[2px]">建設公司模式</p>
                     </div>
                     <p
-                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-[#EFEFEF] rounded-[5px] flex items-center justify-center text-sm">
+                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-white rounded-[5px] flex items-center justify-center text-sm">
                         建設公司統包</p>
                 </div>
                 <div>
@@ -34,7 +34,7 @@
                         <p class="mt-[2px]">自地自建模式</p>
                     </div>
                     <p
-                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-[#EFEFEF] rounded-[5px] flex items-center justify-center text-sm">
+                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-white rounded-[5px] flex items-center justify-center text-sm">
                         營造廠商統包<br />or<br />自行發包</p>
                 </div>
                 <div>
@@ -47,7 +47,7 @@
                         <p class="mt-[2px] text-[#813B31]">手建築的模式</p>
                     </div>
                     <p
-                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-[#EFEFEF] rounded-[5px] flex items-center justify-center text-sm">
+                        class="mt-5 py-5 w-full md:w-[240px] h-[130px] bg-white rounded-[5px] flex items-center justify-center text-sm">
                         消費者統包<br />+<br />專業建築經理<br />+<br />營造廠只包主結構體</p>
                 </div>
             </div>
