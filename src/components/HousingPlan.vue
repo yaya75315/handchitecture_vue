@@ -14,7 +14,7 @@
                 <div>
                     <span
                         class="pl-5 pr-4 py-2 text-white bg-[#813B31] rounded-[10px] tracking-[5px] font-medium">計畫規格</span>
-                    <div class="gap-10 flex flex-wrap md:flex-nowrap items-center justify-between">
+                    <div class="mt-4 gap-10 flex flex-wrap md:flex-nowrap items-center justify-between">
                         <div class="mt-4 text-sm ml-3 flex flex-col gap-[10px]">
                             <div class="tracking-[5px]">
                                 <span class="pl-2 pr-5 border-r border-black">計畫</span>

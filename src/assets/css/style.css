@@ -842,6 +842,10 @@ video {
   width: 340px;
 }
 
+.w-\[70px\] {
+  width: 70px;
+}
+
 .max-w-\[920px\] {
   max-width: 920px;
 }
@@ -1108,6 +1112,21 @@ video {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
+}
+
+.object-right {
+  -o-object-position: right;
+     object-position: right;
+}
+
+.object-left {
+  -o-object-position: left;
+     object-position: left;
 }
 
 .px-4 {

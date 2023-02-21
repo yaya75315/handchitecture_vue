@@ -22,7 +22,7 @@
                         class="w-[400px] sm:ml-auto flex flex-col gap-0.5 border-l-[5px] border-[#D9D9D9] pl-[16px] py-1">
                         <div
                             class="w-full flex items-center justify-between text-[#968E85] whitespace-nowrap text-sm font-medium tracking-wide md:tracking-[5px] ">
-                            <div class="w-[90px] md:w-[110px] flex  justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex  justify-between shrink-0">
                                 <p>2023- </p>
                                 <p class="mr-[-0.025em] md:mr-[-5px]">至今</p>
                             </div>
@@ -30,7 +30,7 @@
                         </div>
                         <div
                             class="w-full flex items-center justify-between text-[#968E85] whitespace-nowrap text-sm font-medium tracking-wide md:tracking-[5px]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>2021- </p>
                                 <p class="mr-[-0.025em] md:mr-[-5px]">至今</p>
                             </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div
                             class="w-full flex items-center justify-between text-[#968E85] whitespace-nowrap text-sm font-medium tracking-wide md:tracking-[5px]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>2019-</p>
                                 <p>2021</p>
                             </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div
                             class="w-full flex items-center justify-between text-[#968E85] whitespace-nowrap text-sm font-medium tracking-wide md:tracking-[5px]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>2016-</p>
                                 <p>2019</p>
                             </div>
@@ -205,14 +205,14 @@
                     <div
                         class="w-[460px] sm:ml-auto flex flex-col gap-0.5 border-l-[5px] border-[#D9D9D9] pl-[16px] py-1 whitespace-nowrap text-sm font-medium tracking-wide md:tracking-[5px]">
                         <div class="w-full flex items-center justify-between text-[#968E85] ">
-                            <div class="w-[90px] md:w-[110px] flex  justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex  justify-between shrink-0">
                                 <p>2023- </p>
                                 <p class="mr-[-0.025em] md:mr-[-5px]">至今</p>
                             </div>
                             <p class="ml-4">凱元土木包工業 技術顧問</p>
                         </div>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1999-</p>
                                 <p class="mr-[-0.025em] md:mr-[-5px]">2022</p>
                             </div>
@@ -220,7 +220,7 @@
                         </div>
                         <p class="text-[#CABFB3] text-end">（總共完成設計、營造上百棟的客製化私人住宅）</p>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1997-</p>
                                 <p>1998</p>
                             </div>
@@ -228,42 +228,42 @@
                         </div>
                         <p class="text-[#CABFB3] text-end">（鄉林集團涵碧樓飯店設計行銷諮詢）</p>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p></p>
                                 <p>1996</p>
                             </div>
                             <p class="ml-4">中國生產力中心 雲嘉南工地管理講師</p>
                         </div>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1993-</p>
                                 <p>1997</p>
                             </div>
                             <p class="ml-4">力百營造有限公司 副總經理</p>
                         </div>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1993-</p>
                                 <p>1997</p>
                             </div>
                             <p class="ml-4">瑞銘建設、築福事業有限公司 總經理</p>
                         </div>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1990-</p>
                                 <p>1993</p>
                             </div>
                             <p class="ml-4">南紡集團南紡建設 專業經理人</p>
                         </div>
                         <div class="w-full flex items-center justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1987-</p>
                                 <p>1990</p>
                             </div>
                             <p class="ml-4">宗欣建設集團宗揚房屋 副總經理</p>
                         </div>
                         <div class="w-full flex items-start justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1983-</p>
                                 <p>1987</p>
                             </div>
@@ -274,7 +274,7 @@
                             </div>
                         </div>
                         <div class="w-full flex items-start justify-between text-[#968E85]">
-                            <div class="w-[90px] md:w-[110px] flex justify-between shrink-0">
+                            <div class="w-[70px] md:w-[110px] flex justify-between shrink-0">
                                 <p>1983-</p>
                                 <p>1987</p>
                             </div>
