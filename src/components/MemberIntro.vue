@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-32 px-4 max-w-[920px] mx-auto">
+    <div class="px-4 max-w-[920px] mx-auto">
         <div class="big-title text-center py-16">
             <p>團隊介紹</p>
         </div>

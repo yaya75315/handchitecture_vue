@@ -1,7 +1,7 @@
 
 
 <template>
-  <div class="">
+  <div class="content">
     <HomeView />
   </div>
   <footer class="bg-[#CABFB3]/10 pt-56">

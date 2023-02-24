@@ -1,30 +1,31 @@
 <template>
-  <nav
-    class="noto-sans flex items-center fixed left-0 right-0 z-10 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
-    <div class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto">
-      <div class="flex items-center gap-3">
-        <img class="w-[50px]" src="../assets/images/LOGO.svg" alt="" />
-        <p class="text-[#2A2A2A] font-medium tracking-[10px] text-sm">
-          手建築研究所
-        </p>
+
+    <nav
+      class="noto-sans flex items-center fixed left-0 right-0 z-10 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
+      <div class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto">
+        <div class="flex items-center gap-3">
+          <img class="w-[50px]" src="../assets/images/LOGO.svg" alt="" />
+          <p class="text-[#2A2A2A] font-medium tracking-[10px] text-sm">
+            手建築研究所
+          </p>
+        </div>
+        <div v-if="clientWidth < 560" class="hamburger" :class="{ open: menuStatus }" @click="menuStatus = !menuStatus">
+          <span></span>
+          <span class="circle"></span>
+          <span></span>
+        </div>
+        <ul class="flex items-center text-[#2B2B2B] gap-8 text-sm tracking-[5px]"
+          :class="[{ menu: clientWidth < 560 }, { open: menuStatus }]">
+          <li @click="scrollToElement('aboutUs')">關於手建築</li>
+          <li @click="scrollToElement('groupInfo')">團隊介紹</li>
+          <li @click="scrollToElement('housingPlan')">殼計畫</li>
+        </ul>
       </div>
-      <div v-if="clientWidth < 560" class="hamburger" :class="{ open: menuStatus }" @click="menuStatus = !menuStatus">
-        <span></span>
-        <span class="circle"></span>
-        <span></span>
-      </div>
-      <ul class="flex items-center text-[#2B2B2B] gap-8 text-sm tracking-[5px]"
-        :class="[{ menu: clientWidth < 560 }, { open: menuStatus }]">
-        <li>關於手建築</li>
-        <li>團隊介紹</li>
-        <li>殼計畫</li>
-      </ul>
-    </div>
-  </nav>
-  <section class="mt-[58px] inline-block w-full">
-    <div class="">
-      <div 
-        class="key-vision blur-[2px] sm:blur-none noto-serif absolute left-0 h-[calc(100vh-58px)] w-full lg:w-[calc(100%-300px)] bg-slate-100 overflow-hidden">
+    </nav>
+    <div id="scroll-container" ref="scrollContainer">
+    <section class="h-screen w-full">
+      <div
+        class="key-vision blur-[2px] sm:blur-none noto-serif absolute left-0 h-full w-full lg:w-[calc(100%-300px)] overflow-hidden">
         <div ref="baseCoverRef" class="key-vision-base absolute w-full h-full">
           <img class="w-full h-full object-cover" src="../assets/images/base.png" alt="" />
         </div>
@@ -41,32 +42,36 @@
           <img class="w-full h-full object-cover" src="../assets/images/shadow.png" alt="" />
         </div>
       </div>
-      <div  ref="titleCoverRef"
+      <div ref="titleCoverRef"
         class="key-text absolute right-6 md:right-40 top-[34vh] whitespace-nowrap lg:top-[30vh] chenyuluoyan tracking-[3px] text-[30px] text-[#343434]">
         <p class="mt-20">親手創造夢想住宅的旅途</p>
         <p>這是一趟屬於您與家人，</p>
       </div>
-    </div>
-    <div class="lg:px-0 block mt-[calc(100vh+65px)] noto-sans">
+    </section>
+
+    <div id="content" class="lg:px-0 block noto-sans">
       <!-- 關於手建築 -->
-      <div class="about-us bg-[#CABFB3]/10">
+      <div class="fade-in about-us bg-[#F9F9F9]" ref="aboutUs">
         <AboutUs />
       </div>
       <!-- 團隊介紹 -->
-      <MemberIntro :clientWidth="clientWidth" />
+      <div ref="groupInfo">
+        <MemberIntro class="fade-in" :clientWidth="clientWidth" />
+      </div>
       <!-- 殼計畫 -->
-      <div class=" bg-[#CABFB3]/10 pb-16">
+      <div class="fade-in bg-[#F9F9F9] pb-16" ref="housingPlan">
         <HousingPlan />
         <!-- 導引按鈕 -->
         <div class="px-4 mt-32 max-w-[920px] mx-auto text-center flex flex-col items-center gap-7">
-          <button
+          <button @click="openWindow('facebook')"
             class="max-w-[600px] w-full text-white py-3 tracking-[5px] text-[22px] bg-[#484848] rounded-[10px] hover:bg-[#813B31] transition-colors">了解更多</button>
-          <button
+          <button @click="openWindow('form')"
             class="text-[#968E85] hover:text-[white] hover:bg-[#968E85] text-xs px-6 py-2 rounded-[5px] border border-[#968E85] tracking-[2px] transition-colors">申請加入手建築</button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
 </template>
 
 <script setup>
@@ -74,64 +79,104 @@ import { ref, onMounted } from "vue";
 import AboutUs from "@/components/AboutUs.vue"
 import MemberIntro from "@/components/MemberIntro.vue"
 import HousingPlan from "@/components/HousingPlan.vue"
-import { gsap } from 'gsap';
+import { gsap, Power1, Power3 } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import LocomotiveScroll from "locomotive-scroll";
 
 // 判斷navigation bar menu狀態
 // menuStatus false=關閉菜單, true=開啟菜單
 const menuStatus = ref(false);
 // clientWidth 監聽目前裝置寬度，以判斷是否顯示hamburger
 const clientWidth = ref(null);
-const baseCoverRef = ref(null) 
-const middleCoverRef = ref(null) 
-const topCoverRef = ref(null) 
 const titleCoverRef = ref(null)
 const scrollY = ref(null)
+const locoScroll = ref(null)
+const scrollContainer = ref(null)
 
 clientWidth.value = window.innerWidth;
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+
 onMounted(() => {
+
   // 監聽網頁寬度
   window.addEventListener("resize", () => {
     clientWidth.value = window.innerWidth;
     console.log(clientWidth.value);
   });
 
-  gsap.from('.key-vision', { opacity: 0, duration: 3,x:-100 ,ease: "power3"});
-  gsap.from('.key-text', { opacity: 0, duration: 3,x:+200,y:100 ,ease: "power3" });
+  gsap.from('.key-vision-text', { opacity: 0, duration: 2, y: -100, ease: Power1.easeInOut });
+  gsap.from('.key-vision-shadow', { opacity: 0, duration: 2, ease: Power1.easeInOut });
+  gsap.from('.key-vision-base', { opacity: 0, duration: 1.5, x: -100, ease: Power1.easeInOut });
+  gsap.from('.key-text', { opacity: 0, duration: 2, x: +200, y: 100, ease: Power1.easeInOut });
 
-  // 監聽元素初始位置
-  console.log(baseCoverRef.value)
-  const baseCoverParallax = baseCoverRef.value.getBoundingClientRect().top;
-  const middleCoverParallax = middleCoverRef.value.getBoundingClientRect().top;
-  const topCoverParallax = topCoverRef.value.getBoundingClientRect().top;
-  const rightTitleParallax = titleCoverRef.value.getBoundingClientRect().top;
-  console.log('baseCoverParallax:',baseCoverParallax)
 
-  // 在滾動事件中更新元素位置
-  window.addEventListener('scroll', () => {
-      scrollY.value = window.scrollY;
-      console.log(scrollY.value)
-      gsap.to(topCoverRef.value, {
-        x: Math.min(scrollY.value * 0.2, 200) , // 根據滾動位置計算元素的新位置
-        duration: 2, // 持續時間
-      });
-
-      gsap.to(middleCoverRef.value, {
-        y: scrollY.value * 0.01, // 根據滾動位置計算元素的新位置
-        duration: 1, // 持續時間
-      });
-
-      gsap.to(titleCoverRef.value, {
-        y: Math.min(scrollY.value * 0.3,150), // 根據滾動位置計算元素的新位置
-        duration: 0.5, // 持續時間
-      });
+  gsap.utils.toArray(".fade-in").forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 100,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "bottom 20%",
+      },
     });
+  });
+
+
+  gsap.to('.key-vision-shadow', {
+    x: 250,
+    ease: Power3.easeOut,
+    scrollTrigger: {
+      trigger: 'section',
+      start: 'top top',
+      end: '+=100%',
+      scrub: 3,
+      pin: false,
+    }
+  });
+
+  gsap.to("#content",{
+    scrollTrigger: {
+      trigger: '#content',
+      start: 'top top',
+      end: '+=100%',
+      scrub: 2,
+    }
+  })
 });
+
+
+const aboutUs = ref(null)
+const groupInfo = ref(null)
+const housingPlan = ref(null)
+const scrollToElement = (val) => {
+  menuStatus.value = false
+  if(val == 'aboutUs'){
+    gsap.to(window, { duration: 1, scrollTo: {y:aboutUs.value,offsetY: 20}, ease:Power3 });
+  }else if( val == 'groupInfo'){
+    gsap.to(window, { duration: 1, scrollTo: {y:groupInfo.value,offsetY: 20}, ease:Power3 });
+  }else if( val == 'housingPlan'){
+    gsap.to(window, { duration: 1, scrollTo: {y:housingPlan.value,offsetY: 20}, ease:Power3 });
+  }
+  
+}
+
+const openWindow = (val) =>{
+  if(val == 'facebook'){
+    window.open('https://www.facebook.com/HandchitectureGallery')
+  }else if(val == 'form'){
+    window.open('https://forms.gle/yyDPPxypMi8vjpqS6')
+  }
+  
+ 
+  
+}
 </script>
 
 <style scoped>
-nav{
+nav {
   transition: font 0.3s ease-in;
 }
 
@@ -170,7 +215,8 @@ nav ul li:hover {
 }
 
 .key-vision-shadow {
-  transform: scale(1.3);
+  transform: scale(1.8);
+  float: left;
 }
 
 .key-text {
