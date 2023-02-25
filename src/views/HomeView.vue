@@ -199,9 +199,9 @@ nav ul li:hover {
 
 .key-vision-text {
   position: absolute;
-  left: 60%;
+  left: 50%;
   top: 50%;
-  transform: translate(-60%, -50%);
+  transform: translate(-50%, -50%);
   white-space: nowrap;
   transition: top 0.3s ease-in-out;
 }
@@ -215,7 +215,7 @@ nav ul li:hover {
 }
 
 .key-vision-shadow {
-  transform: scale(1.8);
+  transform: scale(2.3);
   float: left;
 }
 
@@ -333,10 +333,6 @@ nav ul li:hover {
 
   .key-text {
     top: 50%;
-  }
-
-  .key-vision-shadow {
-    transform: scale(2.3);
   }
 }
 </style>
