@@ -1,5 +1,5 @@
 <template>
-  <nav class="noto-sans flex items-center fixed left-0 right-0 z-20 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
+  <nav class="noto-sans w-full flex items-center fixed left-0 right-0 z-20 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
     <div class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto">
       <div class="flex items-center gap-3">
         <img class="w-[50px]" src="../assets/images/LOGO.svg" alt="" />
@@ -48,15 +48,15 @@
 
     <div id="content" class="lg:px-0 block noto-sans">
       <!-- 關於手建築 -->
-      <div class="fade-in about-us bg-[#F9F9F9]" ref="aboutUs">
+      <div class=" about-us bg-[#F9F9F9]" ref="aboutUs">
         <AboutUs />
       </div>
       <!-- 團隊介紹 -->
       <div ref="groupInfo">
-        <MemberIntro class="fade-in" :clientWidth="clientWidth" />
+        <MemberIntro class="" :clientWidth="clientWidth" />
       </div>
       <!-- 殼計畫 -->
-      <div class="fade-in bg-[#F9F9F9] pb-16" ref="housingPlan">
+      <div class=" bg-[#F9F9F9] pb-16" ref="housingPlan">
         <HousingPlan />
         <!-- 導引按鈕 -->
         <div class="px-4 mt-32 max-w-[920px] mx-auto text-center flex flex-col items-center gap-7">
@@ -95,29 +95,27 @@ onMounted(() => {
   // 監聽網頁寬度
   window.addEventListener("resize", () => {
     clientWidth.value = window.innerWidth;
-    console.log(clientWidth.value);
-  });
+  });  
 
-  var tl = gsap.timeline();
-
-  // gsap.from('.key-vision-text', { opacity: 0, duration: 2, y: -100, ease: Power1.easeInOut });
-  // gsap.from('.key-vision-shadow', { opacity: 0, duration: 2, ease: Power1.easeInOut });
-  // gsap.from('.key-vision-base', { opacity: 0, duration: 1.5, x: -100, ease: Power1.easeInOut });
-  // gsap.from('.key-text', { opacity: 0, duration: 2, x: +200, y: 100, ease: Power1.easeInOut });
+  gsap.from('.key-vision-text', { opacity: 0, duration: 2, y: -100,delay:1, ease: Power1.easeInOut });
+  gsap.from('.key-vision-shadow', { opacity: 0, delay:1, duration: 2, ease: Power1.easeInOut });
+  gsap.to('.key-vision-shadow', { scale:2.3, ease: Power1.easeInOut });
+  gsap.from('.key-vision-base', { opacity: 0, duration: 1.5, x: -100, ease: Power1.easeInOut });
+  gsap.from('.key-text', { opacity: 0, duration: 2, ease: Power1.easeInOut });
 
 
-  gsap.utils.toArray(".fade-in").forEach((element) => {
-    gsap.from(element, {
-      opacity: 0,
-      y: 100,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: element,
-        start: "top 80%",
-        end: "bottom 20%",
-      },
-    });
-  });
+  // gsap.utils.toArray(".fade-in").forEach((element) => {
+  //   gsap.from(element, {
+  //     opacity: 0,
+  //     y: 100,
+  //     duration: 1.5,
+  //     scrollTrigger: {
+  //       trigger: element,
+  //       start: "top 80%",
+  //       end: "bottom 20%",
+  //     },
+  //   });
+  // });
 
 
   gsap.to('.key-vision-shadow', {
@@ -207,11 +205,11 @@ nav ul li:hover {
 }
 
 .key-vision-shadow {
-  transform: scale(2.3);
+  /* transform: scale(2.3);
   -ms-transform: scale(2.3);
   -webkit-transform: scale(2.3);
   -moz-transform: scale(2.3);
-  -o-transform: scale(2.3);
+  -o-transform: scale(2.3); */
   float: left;
 }
 
@@ -293,8 +291,10 @@ nav ul li:hover {
   text-align: center;
   padding-top: 30vh;
   opacity: 0.8;
+  backdrop-filter: blur(20px);
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
+  z-index: 30;
 }
 
 .menu li {

@@ -1,10 +1,10 @@
 <template>
-    <div class="mt-32 px-4 max-w-[920px] mx-auto">
+    <div class="housing-plan mt-32 px-4 max-w-[920px] mx-auto">
         <div class="big-title font-medium text-center py-16">
             <img class="w-[72px] mx-auto translate-x-[-5px] mb-2" src="@/assets/images/housing.png" alt="">
             <p>殼計畫</p>
         </div>
-        <div>
+        <div class="fade-in-y">
             <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-10">
                 <img class="w-[275px]" src="@/assets/images/taiwan.png" alt="">
                 <p class=" text-[#0f172a] text-justify tracking-[5px]">
@@ -63,3 +63,24 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted } from "vue";
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+    gsap.from('.fade-in-y', {
+            opacity: 0,
+            y: 100,
+            duration: 1.5,
+            scrollTrigger: {
+                trigger: '.housing-plan ',
+                start: "top 80%",
+                end: "bottom 20%",
+            },
+        });
+})
+
+</script>
