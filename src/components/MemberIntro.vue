@@ -1,13 +1,13 @@
 <template>
     <div class="px-4 max-w-[920px] mx-auto">
-        <div class="big-title text-center py-16">
+        <div class="big-title font-medium text-center py-16">
             <p>團隊介紹</p>
         </div>
         <div class="block-content text-[18px] tracking-[5px] max-w-[920px] mx-auto text-justify">
             <div>
                 <div class="flex items-center gap-5">
-                    <p class="px-4 py-2 bg-[#968E85] text-white font-semibold rounded-[3px]">手建築姐</p>
-                    <p class="text-[#968E85] font-semibold text-[20px]">Sylvia</p>
+                    <p class="px-4 py-2 bg-[#968E85] text-white font-medium rounded-[3px]">手建築姐</p>
+                    <p class="text-[#968E85] font-medium text-[20px] tracking-widest">Sylvia</p>
                 </div>
                 <p class="mt-[40px] text-base">把建築輕鬆帶過，顯然並不適合。
                     我們不得不面對一個非常尷尬的事實，那就是，若發現問題比我們想像的還要深奧，那肯定不簡單。帶著這些問題，我們一起來審視建築。儘管如此，別人往往卻不這麼想。透過逆向歸納，得以用最佳的策略去分析建築。
@@ -84,8 +84,8 @@
         </div>
         <div class="mt-32 block-content text-[18px] tracking-[5px] max-w-[920px] mx-auto text-justify">
             <div class="flex items-center gap-5">
-                <p class="px-4 py-2 bg-[#968E85] text-white font-semibold rounded-[3px]">手建築哥</p>
-                <p class="text-[#968E85] font-semibold text-[20px]">田桑</p>
+                <p class="px-4 py-2 bg-[#968E85] text-white font-medium rounded-[3px]">手建築哥</p>
+                <p class="text-[#968E85] font-medium text-[20px] tracking-widest">田桑</p>
             </div>
             <div class="mt-[40px] text-base flex flex-wrap md:flex-nowrap items-start gap-8">
                 <div>
@@ -187,8 +187,8 @@
         </div>
         <div class="mt-32 block-content text-[18px] tracking-[5px] max-w-[920px] mx-auto text-justify">
             <div class="flex items-center gap-5">
-                <p class="px-4 py-2 bg-[#968E85] text-white font-semibold rounded-[3px]">手建築老爹</p>
-                <p class="text-[#968E85] font-semibold text-[20px]">葉總</p>
+                <p class="px-4 py-2 bg-[#968E85] text-white font-medium rounded-[3px]">手建築老爹</p>
+                <p class="text-[#968E85] font-medium tracking-widest text-[20px]">葉總</p>
             </div>
             <div class="mt-[40px] text-base">
                 <p>購屋者如果購地自建，在台灣，只要再申請建設公司的營業登記，就可以將自建屋的行為，宣佈自己為建商。</p>

@@ -4,8 +4,11 @@
   <div class="content">
     <HomeView />
   </div>
-  <footer class="bg-[#CABFB3]/10 pt-56">
-    <div class="bg-[#813B31] h-20 px-4 w-full flex items-center justify-between">
+  <footer class="bg-[#813B31] h-20 px-4 w-full flex flex-col justify-center gap-2">
+    <!-- <div class="text-white text-sm font-medium">
+      聯絡地址： 
+    </div> -->
+    <div class="w-full flex items-center justify-between">
       <div class="gap-10 sm:max-w-[1080px] w-full  flex items-center justify-between mx-auto">
         <div class="flex items-center gap-3">
           <a href="https://www.facebook.com/HandchitectureGallery" target="_blank">
@@ -53,7 +56,7 @@ import HomeView from "./views/HomeView.vue";
   max-width: 96px;
   width: 60%;
   height: 0.5px;
-  background: #000;
+  background: #7c2d12;
   left: 0px;
   top: 50%;
   position: absolute;
@@ -65,7 +68,7 @@ import HomeView from "./views/HomeView.vue";
   max-width: 96px;
   width: 60%;
   height: 0.5px;
-  background: #000;
+  background: #7c2d12;
   right: 0px;
   top: 50%;
   position: absolute;

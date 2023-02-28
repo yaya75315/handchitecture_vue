@@ -1,13 +1,13 @@
 <template>
     <div class="mt-32 px-4 max-w-[920px] mx-auto">
-        <div class="big-title text-center py-16">
+        <div class="big-title font-medium text-center py-16">
             <img class="w-[72px] mx-auto translate-x-[-5px] mb-2" src="@/assets/images/housing.png" alt="">
             <p>殼計畫</p>
         </div>
         <div>
             <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-10">
                 <img class="w-[275px]" src="@/assets/images/taiwan.png" alt="">
-                <p class="text-[18px] text-[#3F3F46] text-justify tracking-[5px]">
+                <p class=" text-[#0f172a] text-justify tracking-[5px]">
                     本計畫致力於在台灣幫助3,000戶家庭，在全國22縣市、363鄉鎮區除了六都的其中幾個區以外，親手創造600萬內的兩層樓別墅，總售價成為當地傳統建商新成屋的六折價。</p>
             </div>
             <div class="mt-24">

@@ -1,14 +1,14 @@
 <template>
     <div class="max-w-[920px] mx-auto py-20 px-4 ">
-        <div class="big-title text-center pb-16">
+        <div class="big-title font-medium text-center pb-16">
             <p>關於手建築</p>
         </div>
-        <div class="block-content text-base md:text-[18px] tracking-[5px] flex flex-col gap-7  text-justify">
+        <div class="block-content text-[#0f172a] text-base tracking-[5px] flex flex-col gap-7 ">
             <p>手建築有限公司創立於2022年11月22日，主要的核心理念為：居住是基本人權，每個人都應當擁有「親手創造住宅」並「安居其中」的權利。</p>
             <p>然而手建築並非「建商」也不會成為「建設公司」，我們提出我們的想法來創造新的自建模式，與其說是模式，手建築更期望成為一場「運動」，一場由每一位消費者所發起的「互助 、 互惠、 共學」導向的運動。</p>
             <p>手建築期望以家人的角度帶領居住者在找尋住所的過程「去中間商化」，從源頭消費，在不假人他人之手的過程增添住宅更多「手的溫度」。</p>
         </div>
-        <div class="mt-32 tracking-[2px] text-[#343434]">
+        <div class="mt-32 tracking-[2px] font-medium text-[#334155]">
             <p class="text-center ">簡單來說！ 手建築與一般建商和自建的差異就是⋯⋯</p>
             <div class="mt-[50px]  w-full text-center grid grid-cols-1 md:grid-cols-3 gap-16">
                 <div>
