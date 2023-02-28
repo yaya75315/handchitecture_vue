@@ -1,5 +1,5 @@
 <template>
-  <nav class="noto-sans w-full flex items-center fixed left-0 right-0 z-20 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
+  <nav class="noto-sans w-full flex items-center fixed left-0 right-0 z-30 bg-white/75 h-[58px] backdrop-blur-[10px] px-4 py-2">
     <div class="sm:max-w-[1080px] w-full flex items-center justify-between mx-auto">
       <div class="flex items-center gap-3">
         <img class="w-[50px]" src="../assets/images/LOGO.svg" alt="" />

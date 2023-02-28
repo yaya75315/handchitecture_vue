@@ -4,10 +4,10 @@
   <div class="content">
     <HomeView />
   </div>
-  <footer class="bg-[#813B31] h-20 px-4 w-full flex flex-col justify-center gap-2">
-    <!-- <div class="text-white text-sm font-medium">
-      聯絡地址： 
-    </div> -->
+<footer class="bg-[#813B31] h-20 px-4 w-full flex flex-col justify-center gap-2">
+  <!-- <div class="text-white text-sm font-medium">
+        聯絡地址： 
+      </div> -->
     <div class="w-full flex items-center justify-between">
       <div class="gap-10 sm:max-w-[1080px] w-full  flex items-center justify-between mx-auto">
         <div class="flex items-center gap-3">
@@ -27,15 +27,21 @@
         <div class="text-white font-medium text-sm tracking-[1px]">Copyright © 2022 手建築有限公司</div>
       </div>
     </div>
-
-
   </footer>
-
+  <CustomCursor v-if="clientWidth>1000"/>
 </template>
 
 <script setup>
 import HomeView from "./views/HomeView.vue";
-
+import CustomCursor from "./components/CustomCursor.vue"
+import { ref, onMounted } from "vue";
+const clientWidth = ref(null);
+onMounted(() => {
+  clientWidth.value = window.innerWidth;
+  window.addEventListener("resize", () => {
+    clientWidth.value = window.innerWidth;
+  });
+})
 </script>
 <style>
 .big-title p {
